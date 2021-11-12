@@ -1,5 +1,5 @@
 %% script that solves the Hulbert model equations with MFB feed as pulse inputs
-%% Date: 2020-03-16
+%% Date: 2021-03-16
 %% Name: Hulbert_model_updates.m
 clc; clear
 
