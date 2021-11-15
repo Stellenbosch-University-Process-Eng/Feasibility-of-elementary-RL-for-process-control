@@ -74,7 +74,7 @@ rvOne.upper_DV = 7;
 %% simulation time used as range across which sampling must occur
 rvOne.simTime = training.nmberOfSteps;
 
-%% controller testing settings (functionality not used here)
+%% controller testing settings (functionality not included in this script)
 %% number of SP and DV changes per episode
 rv_test_Two.numSP = 1;
 rv_test_Two.numDV = 1;
