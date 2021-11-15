@@ -5,7 +5,6 @@
 %% NB:  Expressed all actions and PI tuning parameters as lumped parameter k*(60)
 % Date: 2020/09/15
 %%
-% Name: sarsa_LPF_stiction_Stenman_et_al_model.m
 %% clear command window and workspace
 clc
 clear
