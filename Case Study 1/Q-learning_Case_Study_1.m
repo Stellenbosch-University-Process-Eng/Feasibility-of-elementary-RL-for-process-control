@@ -131,11 +131,7 @@ for episodeCntr = 1:1:training.nmberOfEps
                                                          PIController(PI,...
                                                          Error,prevError,...
                                                          prevIntegralError);
-            %% model valve stiction 
-            %% From: 
-            %% Stenman, A., Gustafsson, F. and Forsman, K. (2003) 
-            %%‘A segmentation-based method for detection of stiction in control valves’, 
-            %% International Journal of Adaptive Control and Signal Processing, 17(7–9), pp. 625–634. doi: 10.1002/acs.769.
+            %% model valve stiction (Stenman model)
             signal2Valve = Action(currentTimeStamp);
             if modelValve == 1
                 
