@@ -5,14 +5,6 @@
 % the PID algorithm.
 % Recommended form of PID algorithm used.
 % Date: 2021/04/07
-%% NOTE:  The second disturbance, ore hardness, cannot be measured reliably.
-%% it may be possible if there were some correlation between density and hardness, 
-%% but this will likely be to dependent on the local ore composition.  Therefore, 
-%% ore hardness is not considered as part of the agent state definition (unmeasurable).
-% Date: 2021/03/15(par.SP_weighting*par.PSE_SP - PSE)
-%%
-%% A below is referring to the first simulation in the list of MIMO simulations
-% Name: A.m
 %%
 clc;clear
 %% 
