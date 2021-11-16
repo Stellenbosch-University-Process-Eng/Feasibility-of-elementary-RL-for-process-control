@@ -5,7 +5,7 @@
 % S = [PSE error, inlet rock fraction, PSE SP]
 % Action: In this script, the sump level is controlled by a separate PI
 % controller. Therefore, the agent's action is represented by a single scalar that
-% may have may have different values and represents MFS.
+% may have different values and represents MFS.
 %% Note:  Need to load two predefined vectors - one for the actor and one for the critic
 % A structure "Reps" is required that contains vectors named "Weights" and
 % "Theta"
