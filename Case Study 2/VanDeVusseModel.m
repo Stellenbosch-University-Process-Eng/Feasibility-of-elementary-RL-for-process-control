@@ -1,8 +1,9 @@
 %% short description
-%.m-file for Simulation of Van der Vusse reaction
-%reference: "NONLINEAR PREDICTIVE CONTROL OF A BENCHMARK CSTR" by Chen
-%et.al. (not first description of model)
-
+% script that may be used to simulate the Van de Vusse reaction scheme
+% model
+% Chen, H., Kremling, A. and Allgöwer, F. (1995) 
+%‘Nonlinear Predictive Control of a Benchmark CSTR’, 
+% in Proceedings of the 3rd European Control Conference ECC’95. Rome, Italy, pp. 3247–3252.
 %%
 clc
 clear
