@@ -6,7 +6,7 @@
 % S = [PSE error, inlet rock fraction, PSE SP]
 % Action: In this script, the sump level is controlled by a separate PI
 % controller. Therefore, the agent's action is represented by a single scalar that
-% may have may have different values and represents MFS.
+% may have different values and represents MFS.
 % Date: 2021/03/15
 %%
 %% A below is referring to the first simulation in the list of MIMO simulations
