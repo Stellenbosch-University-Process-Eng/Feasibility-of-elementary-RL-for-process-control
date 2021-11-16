@@ -1,4 +1,4 @@
-%% script that solves the Hulbert model equations with MFB feed as pulse inputs
+%% script that solves the Hulbert model equations
 %% Date: 2021-03-16
 %% Name: grinding_circuit_model.m
 %% reference:
