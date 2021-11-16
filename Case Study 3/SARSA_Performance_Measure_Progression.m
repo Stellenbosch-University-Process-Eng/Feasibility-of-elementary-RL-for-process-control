@@ -10,7 +10,7 @@ for outer_Cntr = 1:1:200 %30
     % S = [PSE error, inlet rock fraction, PSE SP]
     % Action: In this script, the sump level is controlled by a separate PI
     % controller. Therefore, the agent's action is represented by a single scalar that
-    % may have may have different values and represents MFS.
+    % may have different values and represents MFS.
     %% 
     %% Note: Need to load a predefined set of arrays (the action-value hypervolumes)
     % The structure has the name "out_Reps" and contains all the
