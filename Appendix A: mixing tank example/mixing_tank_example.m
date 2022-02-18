@@ -464,11 +464,11 @@ end
 % function to select action
 function Action_1 = selectAction(Reps,par,state_1,state_2,state_3,numberOfActions)
     t = rand(1);
-    if t <= par.epsilonVec(state_3,1)%par.epsilon
+    if t <= par.epsilonVec(state_3,1)
         % take random action
         Action_1 = randi(numberOfActions);
 
-    elseif t > par.epsilonVec(state_3,1)%par.epsilon
+    elseif t > par.epsilonVec(state_3,1)
         % take greedy action
         vec = Reps.action_value(state_1,state_2,state_3,:);
         index = find(ismember(vec(:),max(vec(:))));
