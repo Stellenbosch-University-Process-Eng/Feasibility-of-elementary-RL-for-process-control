@@ -86,7 +86,7 @@ rvOne.simTime = training.nmberOfSteps;
 %% initialize variable for recording rewards within averaging window
 learning.rewardsInWindow = 0;
 
-%% discretize states and actions and record extreme bounds of CV that may be instantiated
+%% discretize states and actions
 %% max number of states in one dimension = 10; minimum 1
 %% fill in (number of states + 1) and (number of actions + 1) below
 numError_intervals = 11;
