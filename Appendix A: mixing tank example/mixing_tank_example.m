@@ -9,7 +9,7 @@
 %% Recommended:  
 %% * Do not run more than 3000 training episodes at a time.
 %% * After each set of runs, store "Reps" - it contains the tabular action-value function.
-%% * Comment "clear" (line 16) and initialization of Reps (line 127) (also required to test saved policies).
+%% * Comment "clear" (line 16) and initialization of Reps (line 127 and 128) (also required to test saved policies).
 %% * Continue training.
 %% 
 clc
