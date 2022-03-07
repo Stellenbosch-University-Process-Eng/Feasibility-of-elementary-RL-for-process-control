@@ -55,7 +55,7 @@ p.L = 0.5;      % pressure loss parameter (-)
 p.cv = 0.01*60;    % valve discharge coefficient (m^2.5/min)
 
 %% initial ss values
-p.FinSS = (190/1000);         % inlet volumetric flow rate (m^3/s)
+p.FinSS = (190/1000);  % inlet volumetric flow rate (m^3/min)
 p.HSS = 1.5;           % height of the liquid in the tank (m)
 p.k = 1.17*10^-3;      % lumped parameter for valve (m^2)
 p.xSS = 0.259;         % fraction valve opening (-)
