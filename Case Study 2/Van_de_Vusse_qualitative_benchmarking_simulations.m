@@ -42,7 +42,7 @@ elseif SPTracking == 1 && DVTracking == 1 && predefined == 1
     simSeconds = 0;
     numberOfSteps = 200;
 end
-timeIfSeconds = 4000; %% 2021-07-22 changed from 4000 (use for 20s sampling period results) to 2500 (use for 50 s sampling period results) %%4000;%2500;%10000;%2500CHANGEBACK;% 4000 WAS USED INITIALLY BEFORE TRAINING ON A SHORT TIME FRAME4000;
+timeIfSeconds = 4000; 
 if predefined ~= 1
     numberOfSteps = 200;
     %simSeconds = 0; NOT IN INITIAL VERSION
@@ -72,8 +72,8 @@ par.decay_for_epsilon = 0.99; % decay factor to multiply with epsilon
 par.gamma = 0.99;%0.7; % discount factor
 
 %% training settings and SP
-training.nmberOfEps = 2000;%1000;%2000;%2000;%1000;                   % number of episodes to use in training
-training.nmberOfSteps = numberOfSteps;%400;%1200;%100;     % number of steps allowed per episode 
+training.nmberOfEps = 2000;                                % number of episodes to use in training
+training.nmberOfSteps = numberOfSteps;                     % number of steps allowed per episode 
 setPointVec = [0.95,1.09]';      % vector of SPs to select "randomly" at the start of each episode
 training.windowLength = 10;      % window size for summing up rewards
 training.targetRunningReward = 5000; % minimum reward in window before stopping training (large because not intended stopping criterion)
@@ -98,7 +98,7 @@ filter.tauf = 20;
 rewardBandwidth = 1;
 
 %% flag for binary reward
-binReward = 1;%0;%1; % set to 0 to use squared exponential reward function
+binReward = 1; % set to 0 to use squared exponential reward function
 
 %% discretize possible states and actions (can lead to error if not sufficient to cover all encountered states)
 % state bounds (note that only single state component is applicable in this application) 
@@ -247,7 +247,6 @@ par.epsilonVec = 0.8*ones(size(dStates,1),1); % one epsilon for each ff state (#
 if predefined == 1
 
 
-    %load('3ff_Array_RV_5000_400_05_099_40second_sampling.mat')
     load('BINARY002_2000_400_05_099_40second_sampling.mat')
     par.epsilonVec(:,1) = 0.0001; % vector containing initial probabilities of a random action
     
@@ -433,7 +432,7 @@ for episodeCntr = 1:1:training.nmberOfEps
                 learning.agentExp{1,episodeCntr}{stepCntr,4} = Action_1(currentTimeStamp);
                 learning.agentExp{1,episodeCntr}{stepCntr,5} = Action_2(currentTimeStamp);
                 learning.agentExp{1,episodeCntr}{stepCntr,6} = learning.Reward;
-                % update critic
+                % update approximation of action-value function
                 if learning.nxtState_1 ~= myEnvironment.Terminal
                     % non-terminal update to action-value array
                     Reps.action_value(learning.crntAgentState_1,...
@@ -461,7 +460,7 @@ for episodeCntr = 1:1:training.nmberOfEps
                                learning.crntAgentState_2,learning.crntAgentState_3,...
                                learning.crntAgentAction_1,learning.crntAgentAction_2));
                            
-                end % end critic update
+                end % end action-value update
             
             % shift time step T <- (T+1)
             currentTimeStamp = currentTimeStamp + 1;
@@ -707,11 +706,11 @@ end
 % function to select action
 function [Action_1,Action_2] = selectAction(Reps,par,state_1,state_2,state_3,numberOfActions)
     t = rand(1);
-    if t <= par.epsilonVec(state_3,1)%par.epsilon
+    if t <= par.epsilonVec(state_3,1)
         % take random action
         Action_1 = randi(numberOfActions);
         Action_2 = randi(numberOfActions);
-    elseif t > par.epsilonVec(state_3,1)%par.epsilon
+    elseif t > par.epsilonVec(state_3,1)
         % take greedy action
         vec = Reps.action_value(state_1,state_2,state_3,:,:);
         index = find(ismember(vec(:),max(vec(:))));
