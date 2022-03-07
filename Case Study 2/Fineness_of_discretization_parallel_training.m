@@ -409,7 +409,7 @@ function [learning,Reps] = train_agent(par,training,rvOne,learning,dStates,dActi
                 learning.agentExp{1,episodeCntr}{stepCntr,7} = learning.Reward;
                 
                 learning.agentExp{1,episodeCntr}{stepCntr,9} = nxtIAE;
-                % update critic
+                % update action-value function approximation
                 if learning.nxtState_1 ~= myEnvironment.Terminal
                     % non-terminal update to action-value array
                     Reps.action_value(learning.crntAgentState_1,...
@@ -437,7 +437,7 @@ function [learning,Reps] = train_agent(par,training,rvOne,learning,dStates,dActi
                                learning.crntAgentState_2,learning.crntAgentState_3,learning.crntAgentState_4,...
                                learning.crntAgentAction_1,learning.crntAgentAction_2));
                            
-                end % end critic update
+                end % end action-value update
             
             % shift time step T <- (T+1)
             currentTimeStamp = currentTimeStamp + 1;
