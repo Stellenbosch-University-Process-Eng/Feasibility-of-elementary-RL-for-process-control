@@ -409,7 +409,7 @@ function [learning,Reps] = train_agent(par,training,rvOne,learning,dStates,dActi
                 learning.agentExp{1,episodeCntr}{stepCntr,7} = learning.Reward;
                 
                 learning.agentExp{1,episodeCntr}{stepCntr,9} = nxtIAE;
-                % update action-value function approximation
+                % update approximated action-value function
                 if learning.nxtState_1 ~= myEnvironment.Terminal
                     % non-terminal update to action-value array
                     Reps.action_value(learning.crntAgentState_1,...
