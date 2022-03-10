@@ -78,7 +78,7 @@ rvOne.upper_SP = 1.5;
 rvOne.lower_DV = (100/1000);
 rvOne.upper_DV = (200/1000);
 
-%% integer value for random permutations determining when SP and DV steps will occur
+%% integer value for random samples determining when SP and DV steps will occur
 rvOne.simTime = training.nmberOfSteps;
 
 %% end of sampling details
